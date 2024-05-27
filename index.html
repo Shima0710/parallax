@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Parallax</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <style>
+            body {
+                overflow-x: hidden;
+                margin: 0;
+                font-family: sans-serif;
+            }
+            .paralax {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+            .paralax-item {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+            }
+            .p-item1 {
+                background: url(m_088.jpg) center/cover no-repeat;
+            }
+            .p-item3 {
+                background: url(m_099.png)  bottom/100% no-repeat;
+                background-size: cover;
+                background-position: center;
+                z-index: 3;
+            }
+            .p-item30 {
+                background: url(m_09.png)  bottom/100% no-repeat;
+                background-size: cover;
+                background-position: center;
+                z-index: 2;
+            }
+            
+            .p-item4 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 10000%;
+                height: 100%;
+                background: url(".png") repeat-x;
+                background-size: contain;
+                background-position: center;
+                animation: marquee 20s linear infinite;
+            }
+            .p-item4::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1000%;
+                height: 100%;
+                background: url(".png") repeat-x;
+                background-size: contain;
+                background-position: center;
+                animation: marquee 20s linear infinite;
+                z-index: 1;
+                content: '';
+            }
+            @keyframes marquee {
+                0% {
+                    transform: translate3d(0, 0, 0);
+                }
+                100% {
+                    transform: translate3d(-200vw, 0, 0);
+                }
+            }
+            .container {
+                position: relative;
+                z-index: 1;
+                max-width: 1140px;
+                margin: 0 auto;
+                margin-top: 100vh;
+                padding: 20px;
+            }
+            .content-header {
+                font-family: sans-serif;
+                color: white;
+                text-align: center !important;
+                text-transform: uppercase;
+                margin-bottom: 3000px;
+            }
+            .content-header h1 {
+                font-size: 100px;
+                font-weight: 600;
+                color: white;
+                margin-bottom: -40px;
+            }
+            .content-header h2 {
+                font-size: 40px;
+                font-weight: 500;
+                color: white;
+            }
+            .content {
+                text-align: center;
+                margin: 50px 0;
+                padding: 20px;
+                background: rgba(0, 0, 0, 0.5);
+                border-radius: 10px;
+            }
+            .content h1, .content h2 {
+                color: antiquewhite;
+                margin: 20px 0;
+            }
+            .content img {
+                width: 90%;
+                max-width: 600px;
+                margin-bottom: 20px;
+            }
+            .content p {
+                color: azure;
+                font-size: larger;
+                margin: 20px 0;
+            }
+            .content a {
+                display: inline-block;
+                padding: 8px 20px;
+                margin-top: 15px;
+                background-color: #fff;
+                color: #000;
+                border-radius: 20px;
+                text-decoration: none;
+                font-weight: 500;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="paralax">
+            <div class="paralax-item p-item1"></div>
+            <div class="paralax-item p-item2"></div>
+            <div class="paralax-item p-item3"></div>
+            <div class="paralax-item p-item30"></div>
+            <div class="paralax-item p-item4"></div>
+        </div>
+        <div class="container">
+            <div class="content-header">
+                <h1>Portfolio</h1>
+                <h2>Parallax Design</h2>
+            </div>
+            <div class="content">
+                <h1>APPAREL_EC</h1>
+                <img src="images/demo.png" alt="EC画像">
+                <p>
+                    HTML CSS JS jQuery<br>
+                    各ページでの商品、価格、商品名の表示、各ブランドのスライダー、商品の購入画面、関連商品の表示、カート内の商品数の表示、カート内商品の削除、お会計などの一通りの機能を付与しております。関連商品の表示ではコンテンツベースフィルタリングをしており選択した商品と同じジャンルのものを表示させています。
+                </p>
+                <a href="https://shima0710.github.io/demo/index.html">More Detail</a>
+            </div>
+            <div class="content">
+                <h1>RAMEN-MAP</h1>
+                <img src="images/ramen-map.png" alt="map">
+                <p>
+                    HTML CSS JS<br>
+                    Google Maps Platformを使用して作成しました。このアプリは、福岡市に密集しているラーメン屋さんの場所を一目で確認できるようにデザインされています。福岡市に住んでいる方や旅行で訪れる方に最適です。ラーメン屋さんをジャンルごとに色分けして表示しており、気になるお店を簡単に見つけることができます。また、土地勘のない方でも現在地を取得して周辺のラーメン屋さんを探すことができる機能も備えています。
+                </p>
+                <a href="https://shima0710.github.io/fukuoka-ramen-map/map.html" class="btn02 rotatefront">More Detail</a>
+            </div>
+            <div class="content">
+                <h1>BULLETIN BOARD</h1>
+                <img src="images/bb.png" alt="map">
+                <p>
+                    HTML CSS ASP.NET（Ｃ＃）SQLServer<br>
+                    主な機能はアカウント作成、ログイン、会員情報の変更、会員の退会（アカウントの削除）、ログアウト、メッセージ投稿、投稿に対してレスの返信、編集、削除などの機能が付与されています。使用例としては不特定多数の人とコミュニケーションをとることができます。
+                </p>
+            </div>
+            <div class="content">
+                <h1>CIRCLE SITE</h1>
+                <img src="images/php.png" alt="map">
+                <p>
+                    HTML CSS(bootstrap) PHP XAMPP<br>
+                    主な機能はお知らせ、アカウント作成、ログイン、写真のアップロード、アルバム、掲示板によるトークなどの機能が付与されています。使用例としては、サークルやクラブのイベント写真を共有したり、会議の日程や変更事項をお知らせとして投稿したり、メンバー間でのコミュニケーションを掲示板を通じて行うことが挙げられます。
+                </p>
+            </div>
+            <a href="https://www.freepik.com/free-photo/3d-render-snowy-mountain-landscape_1107061.htm#fromView=search&page=1&position=3&uuid=bfa19d78-b7a5-4688-a3b4-6adf592832e7">Image by kjpargeter on Freepik</a>
+            <a href="https://www.freepik.com/free-photo/breathtaking-scenery-snowy-rocks-cloudy-sky-dolomiten-italy_10110959.htm#fromView=search&page=30&position=28&uuid=485dd149-7e18-4c41-a059-9e57e491eb50">Image by wirestock on Freepik</a>
+        </div>
+        <script src="paralax.js"></script>
+    </body>
+</html>
